@@ -31,6 +31,7 @@ export class AppComponent {
     this.msg.username = this.currentUser;
     this.msg.message = this.currentMessage;
     this._chatService.sendMessage(this.msg);
+    this.currentMessage = "";
   }
 
   public listenToMessages() {
