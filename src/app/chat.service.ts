@@ -20,7 +20,7 @@ export class ChatService {
 
   public getMessages = () => {
     return Observable.create((observer) => {
-        this.socket.on('new_msg', (message) => {
+        this.socket.on('new_msg_server', (message) => {
             observer.next(message);
         });
     });
@@ -28,7 +28,7 @@ export class ChatService {
 
   public getUsers = () => {
     return Observable.create((observer) => {
-        this.socket.on('new_user', (message) => {
+        this.socket.on('new_user_server', (message) => {
             observer.next(message);
         });
     });
@@ -36,7 +36,7 @@ export class ChatService {
 
   public whoseTyping = () => {
     return Observable.create((observer) => {
-        this.socket.on('typing', (message) => {
+        this.socket.on('whosetyping_server', (message) => {
             observer.next(message);
         });
     });

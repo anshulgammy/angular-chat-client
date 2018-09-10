@@ -7,7 +7,7 @@
     </div>
     <input type="text" [(ngModel)]="currentUser" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
   </div>
-  <button type="button" class="btn btn-primary" (click)="createSocket();">Join Chat</button>
+  <button type="button" [disabled]="buttonDisabled" class="btn btn-primary" (click)="createSocket();">Join Chat</button>
   <div id="showMessageSection" style="min-height: 300px; max-height: 450px; overflow-y: scroll;">
       <ul class="list-group">
           <li class="list-group-item" *ngFor="let msgString of allMessages">{{msgString}}</li>

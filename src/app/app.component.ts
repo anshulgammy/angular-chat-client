@@ -10,10 +10,8 @@ export class AppComponent {
   title = 'app';
   currentUser: string;
   currentMessage: string;
-  msg: {
-    username: "",
-    message: ""
-  };
+  msg: any = {};
+  buttonDisabled: boolean = false;
 
   allMessages : string[] = [];
 
@@ -26,6 +24,7 @@ export class AppComponent {
     this.listenToUsersJoined();
     this.listenToMessages();
     this.listenToUsersTyping();
+    this.buttonDisabled = true;
   }
 
   sendMessage = function() {
